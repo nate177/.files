@@ -1,15 +1,23 @@
+#VIM is Awesome!!
+#dependancies for my config!!!!!!!
+#zsh-syntax-highlighting#
+#autojump#
+#zsh-autosuggestions#
+#starship-shell-prompt#
+#fuck(autocorrecter)
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 setopt autocd extendedglob
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/nathan/.zshrc'
-#aliases
+alias icat="kitty +kitten icat"
 alias ls='ls --color=auto'
+alias sysupdate='sudo pacman -Syu'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -18,23 +26,11 @@ neofetch
 eval $(thefuck --alias)
 eval $(thefuck --alias FUCK)
 
-#Spaceship
- autoload -U promptinit; promptinit
-  prompt spaceship
-#spaceship configuration
-# Display time
-SPACESHIP_TIME_SHOW=true
-# Display username always
-SPACESHIP_USER_SHOW=always
-SPACESHIP_CHAR_SYMBOL_ROOT="#"
-SPACESHIP_PROMPT_ASYNC=true
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-
-
 
 #Plugins for zsh (path) load last!!
 #load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /etc/profile.d/autojump.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(starship init zsh)"
+
